@@ -71,6 +71,8 @@ namespace WeatherPanel
             btnGetWeather.Enabled = true;
         }
 
+
+        // Location validation Method, takes both the string value of City and State - Makes sure they're not null or empty and returns true or falses.
         private bool LocationDataValid(string city, string state)
         {
             if (String.IsNullOrEmpty(city) || String.IsNullOrEmpty(state))
@@ -80,6 +82,9 @@ namespace WeatherPanel
             return true;
         }
 
+        // Weather data fetching, takes in the City and State provided and fetches weather data from the website provided.
+        // If data was successful, the method returns true - and outs the string weatherText.
+        // Otherwise, the method returns false - and outs the string errorMessage.
         private bool GetWeatherData(string city, string state, out string weatherText, out string errorMessage)
         {
             string weatherTextURL = String.Format("{0}text?city={1}&state={2}", BaseURL, city, state);
@@ -100,6 +105,8 @@ namespace WeatherPanel
                 return false;
             }
         }
+
+        // Similar concept to the GetWeatherData Method, takes City and State - But instead outs an image weatherImage.
         private bool GetWeatherImage(string city, string state, out Image weatherImage, out string errorMessage)
         {
             weatherImage = null;

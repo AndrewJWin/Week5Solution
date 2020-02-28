@@ -19,6 +19,14 @@ namespace MarsWeight
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+
+            if (!ValidateString(txtObjName.Text, out string name, out string textError))
+            {
+                MessageBox.Show(textError, "Object Name Error");
+                txtObjName.Focus();
+                return;
+            }
+
             if (!ValidatePositiveDouble(txtEarth.Text, out double earthWeight, out string weightErrorMsg))
             {
                 MessageBox.Show(weightErrorMsg, "Earth Weight Error");
@@ -28,7 +36,19 @@ namespace MarsWeight
                 
                 double conversionFactor = 0.377;
                 double marsWeight = earthWeight * conversionFactor;
-                txtMars.Text = marsWeight.ToString();
+                txtMars.Text = String.Format("{0} weights {1} on Mars", name, marsWeight);
+        }
+
+        private bool ValidateString(string text, out string name, out string textErrorMsg)
+        {
+            textErrorMsg = null;
+            name = text;
+            if (String.IsNullOrEmpty(text))
+            {
+                textErrorMsg = "Object name cannot be empty";
+                return false;
+            }
+            return true;
         }
 
         private bool ValidatePositiveDouble(string text, out double number, out string errorMessage)

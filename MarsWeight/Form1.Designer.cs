@@ -33,13 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMars = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtObjName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(117, 135);
+            this.btnCalculate.Location = new System.Drawing.Point(138, 193);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(88, 27);
+            this.btnCalculate.Size = new System.Drawing.Size(124, 27);
             this.btnCalculate.TabIndex = 0;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -47,15 +49,15 @@
             // 
             // txtEarth
             // 
-            this.txtEarth.Location = new System.Drawing.Point(203, 26);
+            this.txtEarth.Location = new System.Drawing.Point(203, 82);
             this.txtEarth.Name = "txtEarth";
-            this.txtEarth.Size = new System.Drawing.Size(109, 22);
+            this.txtEarth.Size = new System.Drawing.Size(221, 22);
             this.txtEarth.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 26);
+            this.label1.Location = new System.Drawing.Point(32, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 17);
             this.label1.TabIndex = 2;
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 87);
+            this.label2.Location = new System.Drawing.Point(35, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 4;
@@ -72,17 +74,35 @@
             // 
             // txtMars
             // 
-            this.txtMars.Location = new System.Drawing.Point(203, 87);
+            this.txtMars.Location = new System.Drawing.Point(203, 140);
             this.txtMars.Name = "txtMars";
             this.txtMars.ReadOnly = true;
-            this.txtMars.Size = new System.Drawing.Size(109, 22);
+            this.txtMars.Size = new System.Drawing.Size(221, 22);
             this.txtMars.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Name of Object";
+            // 
+            // txtObjName
+            // 
+            this.txtObjName.Location = new System.Drawing.Point(203, 26);
+            this.txtObjName.Name = "txtObjName";
+            this.txtObjName.Size = new System.Drawing.Size(221, 22);
+            this.txtObjName.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 188);
+            this.ClientSize = new System.Drawing.Size(469, 232);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtObjName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMars);
             this.Controls.Add(this.label1);
@@ -102,6 +122,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMars;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtObjName;
     }
 }
 

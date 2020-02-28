@@ -10,10 +10,19 @@ using System.Net;
 using System.Windows.Forms;
 using System.IO;
 
+/**********************************\
+*                                  *
+* Andrew Terwilliger 2/28/2020     *
+* Minneapolis College              *
+* ITEC 2505-60 C# Programming      *
+*                                  *
+\**********************************/
+
 namespace WeatherPanel
 {
     public partial class Form1 : Form
     {
+        // Setting a readonly string for the base URL of the weather application.
         readonly string BaseURL = "https://weather-csharp.herokuapp.com/";
 
         public Form1()
@@ -21,12 +30,16 @@ namespace WeatherPanel
             InitializeComponent();
         }
 
+        // GetWeather button Method, takes the provided City and State - fetches the Weather data and returns the value.
         private void btnGetWeather_Click(object sender, EventArgs e)
         {
             btnGetWeather.Enabled = false;
 
             string city = txtCity.Text;
             string state = txtState.Text;
+
+            // Checking if the location is valid, if not - Return the error provided by the website.
+            // Also getting the image from the weather location - Also returning errors provided by the website.
             if (LocationDataValid(city, state))
             {
                 if (GetWeatherData(city, state, out string weather, out string dataError))
